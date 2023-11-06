@@ -1,0 +1,23 @@
+import { Carousel } from "@material-tailwind/react";
+ 
+export function CarouselDefault() {
+  return (
+    <Carousel className="rounded-xl">
+      <img
+        src="https://i.ibb.co/d4sHjzC/dell-8pb7-Hq539-Zw-unsplash.jpg"
+        alt="image 1"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://i.ibb.co/CK3WkbB/mar.webp"
+        alt="image 2"
+        className="h-full w-full object-cover"
+      />
+      <img
+        src="https://i.ibb.co/t4CQcfb/de-2.jpg"
+        alt="image 3"
+        className="h-full w-full object-cover"
+      />
+    </Carousel>
+  );
+}
