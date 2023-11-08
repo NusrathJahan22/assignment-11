@@ -1,7 +1,12 @@
+/* eslint-disable react/prop-types */
 
 const MyBidCart = ({myBid}) => {
+    // eslint-disable-next-line no-unused-vars
     const {email,price,buyeremail,deadline,jobtitle} =myBid
     return (
+       
+
+
         <div className="flex justify-center items-center gap-20 m-10 border-4 border-light-blue-600">
             {/* <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5> */}
             

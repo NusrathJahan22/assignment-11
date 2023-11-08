@@ -85,7 +85,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/postedJob"
+                to="/postJob"
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active bg-light-blue-800" : ""
                 }
@@ -138,7 +138,18 @@ const Navbar = () => {
         <div className="navbar-end">
           {user && <button onClick={handelLogout} className="btn bg-light-blue-700">logout</button>}
           <p>{user?.email}</p>
-          <a className="btn">log</a>
+
+          {/* <li>
+              <NavLink
+                to="/login"
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active bg-light-blue-800" : ""
+                }
+              >
+                Login
+              </NavLink>
+            </li> */}
+          {/* <a className="btn">Login</a> */}
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ export function CarouselDefault() {
   return (
     <Carousel className="rounded-xl">
       <img
-        src="https://i.ibb.co/d4sHjzC/dell-8pb7-Hq539-Zw-unsplash.jpg"
+        src="https://i.ibb.co/1nhxbsz/web-5.jpg"
         alt="image 1"
         className="h-full w-full object-cover"
       />

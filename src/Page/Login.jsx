@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Routes/Provider/AuthProvider";
 import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
 
 // const{googleLogin} = useContext(AuthContext)
 const Login = () => {
@@ -18,9 +19,21 @@ const Login = () => {
     if((email,password)){
       signIn(email.password).then((result) => {
         console.log(result.user)
+        Swal.fire({
+          title: 'success',
+          text: 'successfully Login',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
       })
         .catch((err) => {
           console.log(err.massage);
+          Swal.fire({
+            title: 'oopps',
+            text: 'fail to login',
+            icon: 'error',
+            confirmButtonText: 'ok'
+          })
         })
     }
 
