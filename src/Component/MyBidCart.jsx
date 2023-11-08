@@ -1,8 +1,8 @@
 
 const MyBidCart = ({myBid}) => {
-    const {email,price,buyeremail,deadline} =myBid
+    const {email,price,buyeremail,deadline,jobtitle} =myBid
     return (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center gap-20 m-10 border-4 border-light-blue-600">
             {/* <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5> */}
             
       <div className="flow-root  ">
@@ -11,7 +11,10 @@ const MyBidCart = ({myBid}) => {
           <li className="py-3 sm:py-4">
             <div className="flex items-center space-x-4">
               <div className="shrink-0">
-               
+              <div>
+                <h2  className="font-bold">JobTitle</h2>
+                <div className="inline-flex items-center text-base text-gray-900 dark:text-white">{jobtitle}</div>
+              </div>
               </div>
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-bold text-gray-900 dark:text-white">Bider Emails</p>

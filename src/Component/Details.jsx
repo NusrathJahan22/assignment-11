@@ -13,9 +13,10 @@ const Details = () => {
         const form = e.target
         const price = form.price.value
         const email = form.email.value
+        const jobtitle = form.jobtitle.value
         const buyeremail = form.buyeremail.value
         const deadline = form.deadline.value
-        const formDetails = { price, email, buyeremail, deadline }
+        const formDetails = { price, email, buyeremail, deadline,jobtitle }
         console.log(formDetails)
 
         fetch(`http://localhost:5000/formdetails`, {
@@ -67,6 +68,12 @@ const Details = () => {
                     <h3 className="text-3xl font-bold text-center text-light-blue-500 mt-3">Place your Bid</h3>
                     <form onSubmit={handelDetails} className='md:w-3/4 lg:w-1/2 mx-auto text-bold'>
 
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">JobTitle</span>
+                            </label>
+                            <input type="text" placeholder="jobTitle" className="input input-bordered" required name="jobtitle" />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
