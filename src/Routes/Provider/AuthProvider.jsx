@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import app from "../../Config/Firebase.Config";
 
 
@@ -44,7 +44,8 @@ const logout=() =>{
     googleLogin,
     signUp,
     signIn,
-    logout
+    logout,
+    user
  }
     return (
         <AuthContext.Provider value={authentication}>

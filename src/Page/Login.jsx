@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../Routes/Provider/AuthProvider";
+import { NavLink } from "react-router-dom";
 
 // const{googleLogin} = useContext(AuthContext)
 const Login = () => {
-  const { googleLogin,signIn } = useContext(AuthContext)
+  const { googleLogin, signIn } = useContext(AuthContext)
 
   const handelGoogle = () => {
     googleLogin().then((result => {
@@ -14,18 +15,23 @@ const Login = () => {
   const handelLogin = (e) => {
     e.preventDefault()
 
+    if((email,password)){
+      signIn(email.password).then((result) => {
+        console.log(result.user)
+      })
+        .catch((err) => {
+          console.log(err.massage);
+        })
+    }
+
     const form = e.target
     const password = form.password.value
     const email = form.email.value
     const login = { password, email }
     console.log(login)
 
-    signIn(email.password).then((result) =>{
-      console.log(result.user)
-    })
-    .catch((err) =>{
-      console.log(err.massage);
-    })
+    
+      
   }
   return (
     <div className="w-1/2 mx-auto">
@@ -46,6 +52,9 @@ const Login = () => {
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
+          <NavLink to='/register'>
+            <h2 className="text-light-blue-600 font-semibold">Register</h2>
+          </NavLink>
         </div>
         <div className="form-control mt-6">
           <button className="btn bg-light-blue-800">Login</button>

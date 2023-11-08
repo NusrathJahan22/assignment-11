@@ -5,11 +5,11 @@ import Swal from "sweetalert2";
 
 
 const Register = () => {
-
+    const googleLogin = useContext(AuthContext)
     // eslint-disable-next-line no-unused-vars
     const { signUp } = useContext(AuthContext)
 
-    const googleLogin = useContext(AuthContext)
+    
     const handelGoogle = () => {
         googleLogin().then((result => {
             console.log(result.user)
@@ -72,7 +72,7 @@ const Register = () => {
                 <div className="form-control mt-6">
                     <button className="btn bg-light-blue-600 text-white">Register</button>
                 </div>
-                <button onClick={handelGoogle} className="btn bg-blue-gray-100 w-full"><img src="https://i.ibb.co/8cDBLn5/google-2.png" alt="" className="w-10 h-10 mx-auto" /></button>
+                <button onClick={handelGoogle} className="btn text-center bg-blue-gray-100 w-full"><img src="https://i.ibb.co/8cDBLn5/google-2.png" alt="" className="w-10 h-10 mx-auto" /></button>
             </form>
         </div>
     );

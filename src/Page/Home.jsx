@@ -1,7 +1,11 @@
 
+import AllTabs from "../Component/AllTabs";
 import { CarouselDefault } from "../Component/Banner";
+import ExtraSection1 from "../Component/ExtraSection1";
+import ExtraSection2 from "../Component/ExtraSection2";
 import Footer from "../Component/Footer";
-import Tabs from "../Component/Tabs";
+
+
 
 
 
@@ -10,7 +14,9 @@ const Home = () => {
     return (
         <div>
            <CarouselDefault></CarouselDefault>
-           <Tabs></Tabs>
+           <AllTabs></AllTabs>
+           <ExtraSection1></ExtraSection1>
+           <ExtraSection2></ExtraSection2>
            <Footer></Footer>
            
         </div>

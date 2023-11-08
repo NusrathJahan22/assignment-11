@@ -8,8 +8,12 @@ import MyBids from "../Page/MyBids";
 import BidRequest from "../Page/BidRequest";
 import AddJob from "../Page/AddJob";
 
-import TabCard from "../Component/TabCard";
-import Tabs from "../Component/Tabs";
+import Details from "../Component/Details";
+
+
+
+
+
 // import Error from "../Page/Error";
 
 
@@ -22,7 +26,8 @@ const router = createBrowserRouter([
       children:[
         {
             path:"/",
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=>fetch('http://localhost:5000/addjobs')
         },
         {
             path:"/addJob",
@@ -34,7 +39,8 @@ const router = createBrowserRouter([
         },
         {
             path:"/myBids",
-            element:<MyBids></MyBids>
+            element:<MyBids></MyBids>,
+            loader:() => fetch('http://localhost:5000/formdetails')
         },
         {
             path:"/bidsRequest",
@@ -48,11 +54,14 @@ const router = createBrowserRouter([
             path:"/register",
             element:<Register></Register>
         },
+       
         {
-            path:"/abbjobs",
-            element:<Tabs></Tabs>,
-            loader:()=>fetch('http://localhost:5000/addjobs')
+            path:"/details/:id",
+            element:<Details></Details>,
+            loader:({params}) => fetch (`http://localhost:5000/addjobs/${params.id}`)
+            
         }
+        
       ]
     },
   ]);
