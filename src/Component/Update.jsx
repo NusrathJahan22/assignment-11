@@ -1,11 +1,15 @@
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
+const Update = () => {
+    // const {id} = useParams()
+    const update = useLoaderData()
+    console.log(update)
 
+    // const update1= { jobtitle, minimumprice, deadline, description, maximamprice, email, Category }
 
-
-const AddJob = () => {
-
-    const handleAddJob = e => {
+    const handleUpdate= e => {
         e.preventDefault();
         const form = e.target
         const jobtitle = form.jobtitle.value
@@ -13,40 +17,41 @@ const AddJob = () => {
         const minimumprice = form.minimumprice.value
         const deadline = form.deadline.value
         const Category = form.Category.value
-
         const description = form.description.value
         const maximamprice = form.maximamprice.value
+        const update= { _id,jobtitle, minimumprice, deadline, description, maximamprice, email, Category }
+        console.log(update)
+    
 
-        const AddJob = { jobtitle, minimumprice, deadline, description, maximamprice, email, Category }
-        console.log(AddJob)
-
-
-        fetch(`http://localhost:5000/addjobs`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
+        fetch(`http://localhost:5000/addjobs/${_id}`,{
+            method:"PUT",
+            headers:{
+                "Contant-Type": "application/json",
             },
-            body:JSON.stringify(AddJob)
-                
-
+            body: JSON.stringify(update),
         })
         .then((res) => res.json())
-                .then((data) => {
-                    console.log(data)
-                })
+        .then((data) =>{
+            console.log(data)
+            Swal.fire({
+                title: 'success',
+                text: 'successfully Update',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+              })
+        })
     }
     return (
         <div>
-            <p className='text-5xl text-center font-bold text-light-blue-600 '>Please Add Job</p>
-            
-            <form onSubmit={handleAddJob} className='md:w-3/4 lg:w-1/2 mx-auto text-bold'>
+            <h3 className="text-5xl text-light-blue-700  text-center font-bold">Update posted Job</h3>
+            <form onSubmit={handleUpdate} className='md:w-3/4 lg:w-1/2 mx-auto text-bold'>
                 <div className="form-control">
 
 
                     <label className="label">
                         <span className="label-text">Job Title</span>
                     </label>
-                    <input type="text" placeholder="Job Title" className="input input-bordered" required name="jobtitle" />
+                    <input type="text" placeholder="Job Title" className="input input-bordered"  required name="jobtitle" />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -61,7 +66,7 @@ const AddJob = () => {
                     <input type="text" placeholder="Deadline" className="input input-bordered" required name="deadline" />
                 </div>
 
-                
+
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text">Category</span>
@@ -97,7 +102,7 @@ const AddJob = () => {
 
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn bg-light-blue-600 text-white">Added Job</button>
+                    <button className="btn bg-light-blue-600 text-white">Update Posted Job</button>
                 </div>
 
             </form>
@@ -105,4 +110,4 @@ const AddJob = () => {
     );
 };
 
-export default AddJob;
+export default Update;

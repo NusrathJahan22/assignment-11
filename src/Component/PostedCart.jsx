@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -14,6 +15,7 @@ const PostedCart = ({posted}) => {
         .then((res) =>res.json())
         .then((data) =>{
             console.log(data)
+            // if(acknowledged=true)
              Swal.fire({
           title: 'success',
           text: 'successfully Delete',
@@ -23,9 +25,7 @@ const PostedCart = ({posted}) => {
         })
     }
 
-    // const handelUpdate=(_id){
-
-    // }
+    
 
     return (
         
@@ -37,7 +37,9 @@ const PostedCart = ({posted}) => {
                     <p>Email:{email}</p>
                     <p>Deadline:{deadline}</p>
                     <div className="card-actions flex">
-                        <button className="btn bg-light-blue-400">Update Now</button>
+                       <Link to={`/update/${_id}`}>
+                       <button className="btn bg-light-blue-400">Update Now</button>
+                       </Link>
                         
                         <button onClick={()=> handelDelete(_id)} className="btn bg-light-blue-400">Delete </button>
                        

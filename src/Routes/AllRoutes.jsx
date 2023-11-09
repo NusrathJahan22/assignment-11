@@ -12,6 +12,8 @@ import Details from "../Component/Details";
 import PrivateRoute from "./PrivateRoute";
 import PostJob from "../Page/PostJob";
 import Delete from "../Component/Delete";
+import Update from "../Component/Update";
+import Error from "../Page/Error";
 
 
 
@@ -25,7 +27,8 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
-        //   element:<Error></Error>,
+        errorElement:<Error></Error>,
+        
         children: [
             {
                 path: "/",
@@ -46,11 +49,11 @@ const router = createBrowserRouter([
                 element: <PostJob></PostJob>,
                 loader: () => fetch('http://localhost:5000/addjobs')
             },
-            // {
-            //     path:"/postedJob",
-            //     element:<PostedJob></PostedJob>,
-            //     loader:()=>fetch('http://localhost:5000/addjobs')
-            // },
+            {
+                path:"/update/:id",
+                element:<Update></Update>,
+                loader:({params})=>fetch(`http://localhost:5000/addjobs/${params.id}`)
+            },
             {
                 path: "/myBids",
                 element: <PrivateRoute><MyBids></MyBids></PrivateRoute>,
