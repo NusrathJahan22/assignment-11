@@ -6,7 +6,7 @@ const Error = () => {
     return (
         <div>
            <Lottie animation={ErrorAnimation}></Lottie>
-           <Link to="/">Go To Home</Link>
+           <Link to="/">Go To Home page</Link>
         </div>
     );
 };
