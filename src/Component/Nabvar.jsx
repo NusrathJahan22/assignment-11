@@ -57,7 +57,7 @@ const Navbar = () => {
           </div>
           <div className="">
 
-            <img src="https://i.ibb.co/fvFntrW/logo-5.jpg" alt="" className="w-40 h-40" />
+            <img src="https://i.ibb.co/fvFntrW/logo-5.jpg" alt="" className="w-40 h-30" />
             {/* <p className="btn btn-ghost normal-case text-xl">Web Development</p> */}
           </div>
         </div>
