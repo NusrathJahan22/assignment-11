@@ -11,6 +11,7 @@ import AddJob from "../Page/AddJob";
 import Details from "../Component/Details";
 import PrivateRoute from "./PrivateRoute";
 import PostJob from "../Page/PostJob";
+import Delete from "../Component/Delete";
 
 
 
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
             {
                 path: "/addJob",
                 element: <AddJob></AddJob>
+            },
+            {
+                path: "/delete",
+                element:<Delete></Delete>,
+                loader: ({params}) => fetch(`http://localhost:5000/addjobs/${params.id}`)
             },
             {
                 path: "/postJob",

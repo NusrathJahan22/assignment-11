@@ -1,18 +1,31 @@
-// import { Link } from "react-router-dom";
+
+import Swal from "sweetalert2";
 
 
-const PostedCart = (posted) => {
+const PostedCart = ({posted}) => {
 
     const { _id,jobtitle, minimumprice, description, maximamprice, email, deadline } = posted
     console.log(posted)
 
-    // fetch(`http://localhost:5000/addjobs/${_id}`,{
-    //     method:"DELETE",
-    // }) 
-    // .then((res) =>res.json())
-    // .then((data) =>{
-    //     console.log(data)
-    // })
+    const handelDelete=(_id) =>{
+        fetch(`http://localhost:5000/addjobs/${_id}`,{
+            method:"DELETE",
+        }) 
+        .then((res) =>res.json())
+        .then((data) =>{
+            console.log(data)
+             Swal.fire({
+          title: 'success',
+          text: 'successfully Delete',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        })
+        })
+    }
+
+    // const handelUpdate=(_id){
+
+    // }
 
     return (
         
@@ -25,9 +38,9 @@ const PostedCart = (posted) => {
                     <p>Deadline:{deadline}</p>
                     <div className="card-actions flex">
                         <button className="btn bg-light-blue-400">Update Now</button>
-                        {/* <Link to={}> */}
-                        <button className="btn bg-light-blue-400">Delete </button>
-                        {/* </Link> */}
+                        
+                        <button onClick={()=> handelDelete(_id)} className="btn bg-light-blue-400">Delete </button>
+                       
                     </div>
                 </div>
             </div>
