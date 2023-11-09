@@ -23,7 +23,7 @@ const Update = () => {
         console.log(update)
     
 
-        fetch(`http://localhost:5000/addjobs/${_id}`,{
+        fetch(`https://assignment-11-server-teal-ten.vercel.app/addjobs/${_id}`,{
             method:"PUT",
             headers:{
                 "Contant-Type": "application/json",

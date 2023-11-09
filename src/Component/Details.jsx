@@ -19,7 +19,7 @@ const Details = () => {
         const formDetails = { price, email, buyeremail, deadline, jobtitle }
         console.log(formDetails)
 
-        fetch(`http://localhost:5000/formdetails`, {
+        fetch(`https://assignment-11-server-teal-ten.vercel.app/formdetails`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

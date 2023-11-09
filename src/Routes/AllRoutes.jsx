@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/addjobs')
+                loader: () => fetch('https://assignment-11-server-teal-ten.vercel.app/addjobs')
             },
             {
                 path: "/addJob",
@@ -42,22 +42,22 @@ const router = createBrowserRouter([
             {
                 path: "/delete",
                 element:<Delete></Delete>,
-                loader: ({params}) => fetch(`http://localhost:5000/addjobs/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment-11-server-teal-ten.vercel.app/addjobs/${params.id}`)
             },
             {
                 path: "/postJob",
                 element: <PrivateRoute><PostJob></PostJob></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/addjobs')
+                loader: () => fetch('https://assignment-11-server-teal-ten.vercel.app/addjobs')
             },
             {
                 path:"/update/:id",
                 element:<PrivateRoute><Update></Update></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/addjobs/${params.id}`)
+                loader:({params})=>fetch(`https://assignment-11-server-teal-ten.vercel.app/addjobs/${params.id}`)
             },
             {
                 path: "/myBids",
                 element: <PrivateRoute><MyBids></MyBids></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/formdetails')
+                loader: () => fetch('https://assignment-11-server-teal-ten.vercel.app/formdetails')
             },
             {
                 path: "/bidsRequest",
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
             {
                 path: "/details/:id",
                 element: <Details></Details>,
-                loader: ({ params }) => fetch(`http://localhost:5000/addjobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-teal-ten.vercel.app/addjobs/${params.id}`)
 
             }
 

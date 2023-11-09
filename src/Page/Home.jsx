@@ -3,7 +3,7 @@ import AllTabs from "../Component/AllTabs";
 import { CarouselDefault } from "../Component/Banner";
 import ExtraSection1 from "../Component/ExtraSection1";
 import ExtraSection2 from "../Component/ExtraSection2";
-import Footer from "../Component/Footer";
+
 
 
 
