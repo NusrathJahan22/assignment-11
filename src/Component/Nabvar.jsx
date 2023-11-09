@@ -55,10 +55,10 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="flex">
+          <div className="">
 
-            <img src="https://i.ibb.co/KWDW4V2/logo-3.png" alt="" className="w-20 h-30" />
-            <p className="btn btn-ghost normal-case text-xl">Web Development</p>
+            <img src="https://i.ibb.co/fvFntrW/logo-5.jpg" alt="" className="w-20 h-30" />
+            {/* <p className="btn btn-ghost normal-case text-xl">Web Development</p> */}
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
