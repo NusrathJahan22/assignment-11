@@ -17,7 +17,7 @@ const Home = () => {
            <AllTabs></AllTabs>
            <ExtraSection1></ExtraSection1>
            <ExtraSection2></ExtraSection2>
-           <Footer></Footer>
+          
            
         </div>
     );
