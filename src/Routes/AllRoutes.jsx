@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addJob",
-                element: <AddJob></AddJob>
+                element: <PrivateRoute><AddJob></AddJob></PrivateRoute>
             },
             {
                 path: "/delete",
@@ -46,12 +46,12 @@ const router = createBrowserRouter([
             },
             {
                 path: "/postJob",
-                element: <PostJob></PostJob>,
+                element: <PrivateRoute><PostJob></PostJob></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/addjobs')
             },
             {
                 path:"/update/:id",
-                element:<Update></Update>,
+                element:<PrivateRoute><Update></Update></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/addjobs/${params.id}`)
             },
             {
